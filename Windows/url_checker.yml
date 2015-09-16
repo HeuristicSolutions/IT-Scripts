@@ -1,0 +1,26 @@
+config:
+  #Acceptable Values for Notify: Always|OnErrors|Never
+  Notify: Always
+  SmtpServer: smtp1.dnsmadeeasy.com
+  SmtpPort: 25
+  SmtpAuthType: login
+  SmtpUid: hs-smtp
+  SmtpPwd: sMtpR33ly
+  SmtpDomain: heuristics.net
+  EmailFrom: admin@heuristics.net
+  EmailTo:
+    - gpfeiffer@heuristics.net
+  EmailSubject: "[HS] Website Monitor"
+urls:
+  - address: http://www.asn-online.org/
+    expected_text: American Society of Nephrology
+
+  - address: http://www.asn-online.org/
+    expected_text: Heuristics Rocks!!!
+
+  - address: http://conferences.aila.org/
+    expected_text: 2010 Heuristic Solutions
+
+  - address: https://mdcb.learningbuilder.com/Account/Login
+    expected_text: LearningBuilder
+

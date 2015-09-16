@@ -1,0 +1,76 @@
+Currently in Azure:
+
+lbnet
+	- lbcore01 (dns, A/D)
+	- learningbuilder (IIS server)
+	- lbsql (DB server)
+	- hsapps (sandbox environment)
+
+
+Azure Plan:
+
+- create lb-prod-iis network
+- create lb-prod-db network
+
+- setup azure A/D
+
+- delete lbcore01
+
+
+	lb-prod-iis - network
+		- lb-prod-iis-1a
+		- lb-prod-iis-2a
+		IIS to be in a DMZ (comm to db over 1433)
+		Jump host
+
+	lb-prod-db - network
+		- lb-prod-db-1a
+		- lb-prod-db-2a
+		
+		
+
+
+
+	hs-net
+
+		LB Support (Mirror image of LB PROD)
+		- HeuristicsTest
+
+		LB Staging (test out configuration changes, UAT, etc)
+		- does not exist
+
+
+		LB QA/Support
+		- HeuristicsTest
+
+		HS Internal Production
+		- Octopus (HSProject01)
+		- Jenkins (HSProject01)
+		- Subversion (APSE)
+		- Metronome (APSE)
+		- Sandbox
+		- Analytics
+
+
+	Breakthru some domain/no domain:
+		HS Consulting Production
+		- ASN
+
+
+
+
+PaaS:
+Not using PaaS mostly due to needing to rework the Deployments
+
+
+Ecommerce in PaaS:
+- The Library code would need to be a separate project referenced by both the ECommerce site and the LB instance.
+
+- If we do ONE Ecommerce site:
+	- Must ensure that Payment DLL works with all currently supported versions of LB
+	- Custom styles & logos for each client would not work without development effort to change the UI per client
+
+- Use a separate ECommerce site for each LB instance
+	- additional cost to deploy and manage
+
+

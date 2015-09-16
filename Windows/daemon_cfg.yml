@@ -1,0 +1,17 @@
+config:
+  Notify: Always
+  SmtpServer: smtp1.dnsmadeeasy.com
+  SmtpPort: 25
+  SmtpAuthType: login
+  SmtpUid: hs-smtp
+  SmtpPwd: sMtpR33ly
+  SmtpDomain: heuristics.net
+  EmailFrom: admin@heuristics.net
+  EmailTo:
+    - gpfeiffer@heuristics.net
+  EmailSubject: "[HS] Test Service Monitor Log"
+daemons:
+  # indexing service
+  - cisvc
+  - SQLSERVERAGENT
+
