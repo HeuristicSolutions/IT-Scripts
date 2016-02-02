@@ -113,7 +113,7 @@ Function Update-StepTemplatesOnDeploymentProcesses
 
                     catch [System.InvalidOperationException]{
                         #Catching and error caused by modifying the same collection evaluated on the foreach
-                        #Feel free to add a comment proposing a cleaner fix            
+                        #Feel free to add a comment proposing a cleaner fix
                     }
 
                     catch{

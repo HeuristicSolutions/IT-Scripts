@@ -6,5 +6,8 @@
 USE dbname
 GO
 BACKUP LOG dbname WITH TRUNCATE_ONLY
+
+-- Check that the logical name of the log file is the dbname with _log appended
+-- The target size is in MegaBytes. A good rule of thumb is to make it half the size of the DB.
 DBCC SHRINKFILE(dbname_log, 1)
 
